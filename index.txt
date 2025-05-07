@@ -32,11 +32,11 @@ Contact
 
 About me
 
-I am a web developer experienced in building and maintaining scalable applications across both the front-end and back-end. My additional skills in photo and video editing allow me to contribute to projects with a broader understanding of digital media.
+As a dedicated web developer and multimedia editor, I thrive in crafting dynamic web applications and visually compelling content. With a strong foundation in both front-end and back-end development, I bring a unique blend of technical and creative expertise to every project.
 
-My additional skills in photo and video editing allow me to contribute to projects with a broader understanding of digital media, which is particularly valuable in front-end development. I can leverage this visual acumen to create intuitive and aesthetically pleasing user interfaces.
+I also have extensive editing skills in multimedia, I am able to create high quality content for different types of media. This background allows me to deliver user experiences that are not only functional but also visually captivating.
 
-
+My passion lies in the intersection of technology and design, where I strive to innovate and enhance user interactions through meticulous code and creative media solutions.
 ## service
 
 What i'm doing
@@ -93,17 +93,18 @@ Resume
 
 Education
 
-University school of the arts
-2007 — 2008
-Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.
+Quantum Institute of Technology
+2009 — 2013
+Focused on advanced technological research, pushing boundaries in digital innovation and software engineering.
 
-New york academy of art
-2006 — 2007
-Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est omnis..
+Stellaris Design College
+2005 — 2009
+Studied visual arts and graphic design, exploring various mediums to enhance creative thinking.
 
-High school of art and design
-2002 — 2004
-Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur magni dolores eos.
+Apex Charter Academy
+2001 — 2005
+Achieved a comprehensive understanding of fundamental design concepts and creative problem-solving techniques.
+
 
 Experience
 

@@ -40,11 +40,11 @@ What i'm doing
 
 alt = design icon
 Web design
-The most modern and high-quality design made at a professional level.
+Crafting visually stunning and user-friendly websites that make a powerful first impression and keep visitors engaged. I focus on modern aesthetics, intuitive navigation, and a seamless user experience to effectively represent your brand online.
 
 alt = Web development icon
 Web development
-High-quality development of sites at the professional level.
+Building robust and dynamic websites with clean, efficient code. I specialize in creating responsive and high-performing web solutions that are tailored to your specific needs and scale with your business.
 
 alt = mobile app icon
 Mobile apps

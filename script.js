@@ -6,16 +6,13 @@
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
 
-document.addEventListener("DOMContentLoaded", function() {
 
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
-if (sidebar) {
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
 
 
 
@@ -60,11 +57,9 @@ overlay.addEventListener("click", testimonialsModalFunc);
 
 // custom select variables
 const select = document.querySelector("[data-select]");
-if (select) {
 const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-select-value]");
+const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
-
 
 select.addEventListener("click", function () { elementToggleFunc(this); });
 
@@ -117,7 +112,6 @@ for (let i = 0; i < filterBtn.length; i++) {
   });
 
 }
-}
 
 
 
@@ -138,7 +132,6 @@ for (let i = 0; i < formInputs.length; i++) {
     }
 
   });
-})
 }
 
 

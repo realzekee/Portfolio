@@ -149,20 +149,12 @@ for (let i = 0; i < navigationLinks.length; i++) {
         pages[i].classList.add("active");
         navigationLinks[i].classList.add("active");
 
-        // If the clicked navigation link is "Portfolio", trigger a click on the "All" filter button
-        if (this.innerHTML.toLowerCase() === "portfolio") {
-          const allFilterButton = document.querySelector("[data-filter-btn='All']"); // Corrected selector to match button text
-          if (allFilterButton) {
-            allFilterButton.click();
-          }
-        }
-
-        // If the clicked navigation link is "Portfolio", trigger a click on the "All" filter button
+ // If the clicked navigation link is "Portfolio", show all projects
  if (this.innerHTML.toLowerCase() === "portfolio") {
- const allFilterButton = document.querySelector("[data-filter-btn='all']");
- if (allFilterButton) {
- allFilterButton.click();
- }
+          const projectItems = document.querySelectorAll(".project-item");
+          for (let j = 0; j < projectItems.length; j++) {
+ projectItems[j].classList.add("active");
+          }
  }
         window.scrollTo(0, 0);
       } else {

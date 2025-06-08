@@ -147,7 +147,15 @@ for (let i = 0; i < navigationLinks.length; i++) {
     for (let i = 0; i < pages.length; i++) {
       if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
         pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
+ navigationLinks[i].classList.add("active");
+
+        // If the clicked navigation link is "Portfolio", trigger a click on the "All" filter button
+ if (this.innerHTML.toLowerCase() === "portfolio") {
+ const allFilterButton = document.querySelector("[data-filter-btn='all']");
+ if (allFilterButton) {
+ allFilterButton.click();
+ }
+ }
         window.scrollTo(0, 0);
       } else {
         pages[i].classList.remove("active");

@@ -19,18 +19,36 @@ Portfolio/
 │   └── logos/          # Site branding assets
 ├── css/
 │   └── style.css       # Main stylesheet with CSS variables
+├── data/
+│   └── config.js       # Centralized configuration data
 ├── js/
 │   └── script.js       # Interactive functionality
-└── index.html          # Main HTML file
+├── index.html          # Main HTML file
+├── 404.html            # Custom 404 error page
+├── manifest.json       # PWA manifest
+├── robots.txt          # SEO robots file
+├── sitemap.xml         # XML sitemap
+├── package.json        # Project metadata and scripts
+├── .gitignore          # Git ignore rules
+├── .prettierrc         # Prettier configuration
+├── .eslintrc.json      # ESLint configuration
+├── LICENSE             # MIT License
+├── CONTRIBUTING.md     # Contribution guidelines
+└── README.md           # This file
 ```
 
 ## 🎨 Features
 
 - **Responsive Design** - Optimized for all device sizes
+- **Dark/Light Theme Toggle** - User preference saved in localStorage
 - **Single Page Application** - Smooth navigation between sections
 - **Project Filtering** - Filter portfolio projects by category
 - **Contact Form** - Integrated contact form
 - **Mobile-Friendly** - Collapsible sidebar for mobile devices
+- **SEO Optimized** - Meta tags, sitemap, robots.txt
+- **PWA Ready** - Basic Progressive Web App support
+- **Smooth Animations** - CSS animations for better UX
+- **Lazy Loading** - Images load as needed for performance
 
 ## 🛠️ Setup & Development
 
@@ -138,15 +156,17 @@ Copyright © 2025 Zeke. All rights reserved.
 ## 🐛 Known Issues
 
 - Contact form currently redirects to Google Forms
-- No dark/light theme toggle (planned)
-- Images are not optimized (WebP conversion planned)
+- External fonts and icons may be blocked in some environments
+- Some project images are PNG format (WebP conversion planned)
 
 ## 🎯 Planned Improvements
 
-- [ ] Dark/Light theme toggle
-- [ ] Enhanced SEO metadata
-- [ ] Image lazy loading
+- [x] Dark/Light theme toggle
+- [x] Enhanced SEO metadata
+- [x] Image lazy loading
+- [ ] WebP image conversion
 - [ ] Performance optimizations
 - [ ] Project modal previews
 - [ ] Typing animations
 - [ ] Analytics integration
+- [ ] Backend for contact form

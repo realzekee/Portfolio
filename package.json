@@ -1,0 +1,30 @@
+{
+  "name": "zeke-portfolio",
+  "version": "2.0.0",
+  "description": "Modern personal portfolio website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8000 -o",
+    "lint": "eslint js/**/*.js",
+    "lint:fix": "eslint js/**/*.js --fix",
+    "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,json,md}\""
+  },
+  "keywords": [
+    "portfolio",
+    "personal-website",
+    "web-developer",
+    "resume"
+  ],
+  "author": "Zeke",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "http-server": "^14.1.1",
+    "prettier": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/realzekee/Portfolio.git"
+  }
+}

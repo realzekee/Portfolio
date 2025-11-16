@@ -1,0 +1,128 @@
+/*-----------------------------------*\
+  #THEME SYSTEM
+\*-----------------------------------*/
+
+/**
+ * Light and Dark theme color variables
+ */
+
+/* Light Theme Colors */
+[data-theme='light'] {
+  /* Background colors */
+  --smoky-black: hsl(0, 0%, 95%);
+  --eerie-black-1: hsl(0, 0%, 98%);
+  --eerie-black-2: hsl(0, 0%, 100%);
+  --onyx: hsl(240, 1%, 92%);
+  --jet: hsl(0, 0%, 88%);
+  
+  /* Text colors */
+  --white-1: hsl(0, 0%, 15%);
+  --white-2: hsl(0, 0%, 25%);
+  --light-gray: hsl(0, 0%, 40%);
+  --light-gray-70: hsla(0, 0%, 40%, 0.7);
+  
+  /* Accent colors remain the same */
+  --orange-yellow-crayola: hsl(45, 100%, 60%);
+  --vegas-gold: hsl(45, 54%, 50%);
+  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  
+  /* Gradients for light theme */
+  --bg-gradient-onyx: linear-gradient(
+    to bottom right, 
+    hsl(0, 0%, 98%) 3%, 
+    hsl(0, 0%, 100%) 97%
+  );
+  --bg-gradient-jet: linear-gradient(
+    to bottom right, 
+    hsla(0, 0%, 92%, 0.5) 0%, 
+    hsla(0, 0%, 95%, 0) 100%
+  ), hsl(0, 0%, 96%);
+  --bg-gradient-yellow-1: linear-gradient(
+    to bottom right, 
+    hsl(45, 100%, 71%) 0%, 
+    hsla(36, 100%, 69%, 0) 50%
+  );
+  --bg-gradient-yellow-2: linear-gradient(
+    135deg, 
+    hsla(45, 100%, 71%, 0.251) 0%, 
+    hsla(35, 100%, 68%, 0) 59.86%
+  ), hsl(0, 0%, 96%);
+  --border-gradient-onyx: linear-gradient(
+    to bottom right, 
+    hsl(0, 0%, 85%) 0%, 
+    hsla(0, 0%, 85%, 0) 50%
+  );
+  
+  /* Shadows for light theme */
+  --shadow-1: 0 4px 12px hsla(0, 0%, 0%, 0.08);
+  --shadow-2: 0 8px 20px hsla(0, 0%, 0%, 0.1);
+  --shadow-3: 0 12px 24px hsla(0, 0%, 0%, 0.12);
+  --shadow-4: 0 16px 32px hsla(0, 0%, 0%, 0.08);
+  --shadow-5: 0 20px 40px hsla(0, 0%, 0%, 0.12);
+}
+
+/* Dark Theme Colors (default) */
+[data-theme='dark'] {
+  /* Original dark theme colors are already defined in main CSS */
+  /* This selector is here for explicit theming if needed */
+}
+
+/*-----------------------------------*\
+  #THEME TOGGLE BUTTON
+\*-----------------------------------*/
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--border-gradient-onyx);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--orange-yellow-crayola);
+  font-size: 24px;
+  box-shadow: var(--shadow-2);
+  z-index: 10;
+  cursor: pointer;
+  transition: var(--transition-1);
+  border: 1px solid var(--jet);
+}
+
+.theme-toggle:hover {
+  background: var(--bg-gradient-yellow-2);
+  transform: scale(1.05);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle ion-icon {
+  transition: var(--transition-1);
+}
+
+/* Smooth theme transition */
+:root {
+  transition: background-color var(--transition-2),
+              color var(--transition-2);
+}
+
+* {
+  transition: background-color var(--transition-1),
+              border-color var(--transition-1),
+              box-shadow var(--transition-1);
+}
+
+/* Mobile responsive positioning */
+@media (max-width: 580px) {
+  .theme-toggle {
+    top: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}

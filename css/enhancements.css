@@ -1,0 +1,253 @@
+/*-----------------------------------*\
+  #UI/UX ENHANCEMENTS
+\*-----------------------------------*/
+
+/**
+ * Improved button hover and active states
+ */
+
+button {
+  transition: all var(--transition-1);
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Navbar link improvements */
+.navbar-link {
+  position: relative;
+  transition: color var(--transition-1);
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--text-gradient-yellow);
+  transition: width var(--transition-1);
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+.navbar-link:hover {
+  color: var(--orange-yellow-crayola);
+}
+
+/* Project item hover effects */
+.project-item {
+  transition: all var(--transition-1);
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-3);
+}
+
+.project-item a {
+  transition: color var(--transition-1);
+}
+
+.project-item:hover a {
+  color: var(--orange-yellow-crayola);
+}
+
+/* Service card hover effects */
+.service-item {
+  transition: all var(--transition-1);
+  cursor: pointer;
+}
+
+.service-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-2);
+  background: var(--border-gradient-onyx);
+}
+
+/* Contact link improvements */
+.contact-link {
+  position: relative;
+  transition: color var(--transition-1);
+}
+
+.contact-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--orange-yellow-crayola);
+  transition: width var(--transition-1);
+}
+
+.contact-link:hover::before {
+  width: 100%;
+}
+
+.contact-link:hover {
+  color: var(--orange-yellow-crayola);
+}
+
+/* Social link improvements */
+.social-link {
+  transition: all var(--transition-1);
+}
+
+.social-link:hover {
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  transform: translateY(-3px);
+}
+
+/* Form input improvements */
+.form-input {
+  transition: all var(--transition-1);
+}
+
+.form-input:focus {
+  border-color: var(--orange-yellow-crayola);
+  box-shadow: 0 0 0 3px hsla(45, 100%, 72%, 0.1);
+}
+
+/* Form button improvements */
+.form-btn {
+  transition: all var(--transition-1);
+}
+
+.form-btn:not(:disabled):hover {
+  background: var(--bg-gradient-yellow-1);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-3);
+}
+
+.form-btn:not(:disabled):active {
+  transform: translateY(0);
+}
+
+.form-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Sidebar button improvements */
+.info_more-btn {
+  transition: all var(--transition-1);
+}
+
+.info_more-btn:hover {
+  background: var(--border-gradient-onyx);
+}
+
+/* Filter button improvements */
+.filter-item button {
+  transition: all var(--transition-1);
+  position: relative;
+}
+
+.filter-item button:hover {
+  color: var(--orange-yellow-crayola);
+}
+
+.filter-item button.active {
+  color: var(--orange-yellow-crayola);
+}
+
+/* Timeline item improvements */
+.timeline-item {
+  transition: all var(--transition-1);
+  cursor: default;
+}
+
+.timeline-item:hover {
+  background: var(--border-gradient-onyx);
+  transform: translateX(5px);
+}
+
+/* Skill item improvements */
+.skills-item {
+  transition: all var(--transition-1);
+}
+
+.skills-item:hover {
+  transform: translateX(5px);
+}
+
+.skill-progress-fill {
+  transition: width 1s ease-out;
+}
+
+/* Icon box improvements */
+.icon-box {
+  transition: all var(--transition-1);
+}
+
+.icon-box:hover {
+  transform: scale(1.1);
+  color: var(--white-1);
+  background: var(--bg-gradient-yellow-1);
+}
+
+/* Loading animation for images */
+img {
+  transition: opacity var(--transition-1);
+}
+
+img:not([src]) {
+  opacity: 0;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--orange-yellow-crayola);
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+}
+
+/* Ripple effect for buttons */
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+button:active::before {
+  width: 300px;
+  height: 300px;
+  animation: ripple 0.6s ease-out;
+}

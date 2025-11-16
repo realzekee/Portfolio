@@ -1,6 +1,19 @@
 # 🎨 Zeke's Portfolio
 
-A modern, responsive personal portfolio website showcasing web development projects, skills, and professional experience.
+A modern, responsive personal portfolio website showcasing web development projects, skills, and professional experience. Built with vanilla JavaScript and enhanced with modern web technologies.
+
+## ✨ Version 2.0 - Recent Improvements
+
+This portfolio has been comprehensively refactored with:
+- 🌓 **Dark/Light/System Theme** toggle with persistence
+- ♿ **Full Accessibility** support (WCAG 2.1 AA compliant)
+- ⚡ **Performance Optimizations** (lazy loading, prefetching)
+- 🎭 **Smooth Animations** and transitions
+- 📧 **Enhanced Contact Form** with validation
+- 🎯 **SEO Optimized** with Open Graph tags
+- 🧩 **Modular Architecture** with organized code structure
+
+See [IMPLEMENTATION_SUMMARY.md](./IMPLEMENTATION_SUMMARY.md) for complete details.
 
 ## 🚀 Tech Stack
 
@@ -8,16 +21,21 @@ A modern, responsive personal portfolio website showcasing web development proje
 - **Icons**: Ionicons 5.5.2
 - **Fonts**: Google Fonts (Poppins)
 - **Hosting**: Static hosting (GitHub Pages compatible)
+- **Development**: ESLint, Prettier
 
 ## 📋 Features
 
 - ✅ Responsive design for all devices
+- ✅ Dark/Light/System theme modes
 - ✅ Single-page application with smooth navigation
 - ✅ Portfolio project showcase with filtering
-- ✅ Skills visualization with progress bars
-- ✅ Contact form integration
+- ✅ Skills visualization with animated progress bars
+- ✅ Contact form with validation and feedback
 - ✅ Social media links
-- ✅ Interactive UI elements
+- ✅ Interactive UI elements with hover effects
+- ✅ Lazy loading for images
+- ✅ Full keyboard navigation support
+- ✅ Screen reader friendly
 
 ## 🛠️ Setup & Installation
 
@@ -40,7 +58,12 @@ A modern, responsive personal portfolio website showcasing web development proje
    python -m http.server 8000
    ```
    
-   Using Node.js:
+   Using Node.js (with npm):
+   ```bash
+   npm start
+   ```
+   
+   Using Node.js (without npm):
    ```bash
    npx http-server -p 8000
    ```
@@ -55,6 +78,13 @@ A modern, responsive personal portfolio website showcasing web development proje
    http://localhost:8000
    ```
 
+4. **Development scripts** (optional)
+   ```bash
+   npm run lint        # Check code quality
+   npm run lint:fix    # Fix code issues
+   npm run format      # Format code
+   ```
+
 ## 📁 Project Structure
 
 ```
@@ -63,12 +93,29 @@ Portfolio/
 │   ├── icons/          # SVG icons
 │   ├── images/         # Images and photos
 │   └── logos/          # Logo files
-├── css/
-│   └── style.css       # Main stylesheet
-├── js/
-│   └── script.js       # Main JavaScript file
+├── css/                 # Stylesheets
+│   ├── style.css       # Main styles
+│   ├── theme.css       # Theme system
+│   ├── enhancements.css # UI improvements
+│   ├── animations.css  # Animation definitions
+│   ├── contact.css     # Contact form styles
+│   └── accessibility.css # A11y styles
+├── js/                  # JavaScript modules
+│   ├── script.js       # Main application
+│   ├── theme.js        # Theme management
+│   ├── utils.js        # Utility functions
+│   ├── contact.js      # Contact form handler
+│   ├── animations.js   # Animation controllers
+│   ├── performance.js  # Performance optimizations
+│   └── accessibility.js # Accessibility features
+├── data/                # Configuration data
+│   ├── personal.js     # Personal information
+│   ├── projects.js     # Project portfolio
+│   └── skills.js       # Skills and experience
 ├── index.html          # Main HTML file
-└── README.md           # This file
+├── package.json        # NPM configuration
+├── README.md           # This file
+└── IMPLEMENTATION_SUMMARY.md # Detailed changes
 ```
 
 ## 🎯 Usage
@@ -77,8 +124,10 @@ Simply open `index.html` in a web browser. The portfolio is fully self-contained
 
 ### Navigation
 - Use the top navigation bar to switch between sections (About, Resume, Portfolio, Contact)
+- Click the theme toggle button (top-right) to switch between light/dark/system themes
 - Portfolio items can be filtered by category
-- Contact form submits to Google Forms
+- Contact form provides instant validation feedback
+- Use keyboard navigation (Tab/Enter) for full accessibility
 
 ## 🌐 Browser Support
 

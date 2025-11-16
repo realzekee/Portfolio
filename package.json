@@ -1,0 +1,34 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Modern, responsive portfolio website showcasing projects, skills, and contact information",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8080",
+    "dev": "python -m http.server 8080",
+    "lint:js": "eslint js/**/*.js",
+    "lint:css": "echo 'CSS linting not configured'",
+    "format": "prettier --write '**/*.{html,css,js,json,md}'",
+    "format:check": "prettier --check '**/*.{html,css,js,json,md}'"
+  },
+  "keywords": [
+    "portfolio",
+    "personal-website",
+    "web-developer",
+    "responsive-design"
+  ],
+  "author": "Zeke <realzekee@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/realzekee/Portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/realzekee/Portfolio/issues"
+  },
+  "homepage": "https://github.com/realzekee/Portfolio#readme"
+}

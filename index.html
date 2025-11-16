@@ -5,7 +5,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zeke's Portfolio</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>Zeke - Full Stack Developer & Multimedia Editor | Portfolio</title>
+  <meta name="description" content="Self-taught full stack developer and multimedia editor. Specializing in responsive web design, JavaScript, Python, and professional editing services.">
+  <meta name="keywords" content="web developer, full stack developer, UI/UX designer, multimedia editor, portfolio, JavaScript, Python, HTML, CSS">
+  <meta name="author" content="Zeke">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realzekee.github.io/Portfolio/">
+  <meta property="og:title" content="Zeke - Full Stack Developer & Multimedia Editor">
+  <meta property="og:description" content="Self-taught full stack developer and multimedia editor. Building responsive websites and creating professional visuals.">
+  <meta property="og:image" content="./assets/images/my-avatar.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://realzekee.github.io/Portfolio/">
+  <meta property="twitter:title" content="Zeke - Full Stack Developer & Multimedia Editor">
+  <meta property="twitter:description" content="Self-taught full stack developer and multimedia editor. Building responsive websites and creating professional visuals.">
+  <meta property="twitter:image" content="./assets/images/my-avatar.png">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#1e1e1f">
+  
+  <!-- Performance Hints -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
 
   <!--
     - favicon
@@ -16,6 +42,11 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./css/style.css">
+  
+  <!--
+    - manifest for PWA
+  -->
+  <link rel="manifest" href="./manifest.json">
 
   <!--
     - google font link
@@ -43,7 +74,7 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Zeke" width="80">
+          <img src="./assets/images/my-avatar.png" alt="Zeke" width="80" loading="lazy">
         </figure>
 
         <div class="info-content">
@@ -174,6 +205,12 @@
 
         </ul>
 
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <ion-icon name="sunny-outline" class="sun-icon"></ion-icon>
+          <ion-icon name="moon-outline" class="moon-icon"></ion-icon>
+        </button>
+
       </nav>
       
 
@@ -214,7 +251,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/icons/icon-design.svg" alt="design icon" width="40">
+                <img src="./assets/icons/icon-design.svg" alt="design icon" width="40" loading="lazy">
               </div>
 
               <div class="service-content-box">
@@ -227,7 +264,7 @@
             </li>
             <li class="service-item">
               <div class="service-icon-box">
-                <img src="./assets/icons/icon-dev.svg" alt="Web development icon" width="40">
+                <img src="./assets/icons/icon-dev.svg" alt="Web development icon" width="40" loading="lazy">
               </div>
 
               <div class="service-content-box">
@@ -242,7 +279,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/icons/icon-photo.svg" alt="editing icon" width="40">
+                <img src="./assets/icons/icon-photo.svg" alt="editing icon" width="40" loading="lazy">
               </div>
 
               <div class="service-content-box">
@@ -282,10 +319,10 @@
 
             <div class="modal-img-wrapper">
               <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img loading="lazy">
               </figure>
 
-              <img src="./assets/icons/icon-quote.svg" alt="quote icon">
+              <img src="./assets/icons/icon-quote.svg" alt="quote icon" loading="lazy">
             </div>
 
             <div class="modal-content">
@@ -534,38 +571,64 @@
           <ul class="project-list">
             <li class="project-item active" data-filter-item data-category="web development">
               <a href="https://zeke024.github.io/My-homepage/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-1.jpg" alt="My Homepage" loading="lazy">
+                </figure>
                 <h3 class="project-title">My Homepage</h3>
                 <p class="project-category">Web development</p>
               </a>
             </li>
-            <li class="project-item" data-filter-item data-category="web development">
- <a href="https://realzeke-calculator.vercel.app/" target="_blank">
- <h3 class="project-title">Calculator</h3>
- <p class="project-category">Web development</p>
- </a>
- </li>
- <li class="project-item" data-filter-item data-category="web development">
- <a href="https://realzekee-shopline.vercel.app/" target="_blank">
- <h3 class="project-title">Shopping Website</h3>
- <p class="project-category">Web development</p>
- </a>
- </li>
- <li class="project-item active" data-filter-item data-category="web development">
- <a href="https://realzeke-bank.vercel.app/" target="_blank">
- <h3 class="project-title">ZynPay</h3>
- <p class="project-category">Web development</p>
- </a>
- </li>
-
-
- <li class="project-item" data-filter-item data-category="web development">
- <a href="https://realzeke-chirp.vercel.app/" target="_blank">
- <h3 class="project-title">Chirp</h3>
- <p class="project-category">Web development</p>
- </a>
- </li>
-
-
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="https://realzeke-calculator.vercel.app/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-2.png" alt="Calculator" loading="lazy">
+                </figure>
+                <h3 class="project-title">Calculator</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="https://realzekee-shopline.vercel.app/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-3.jpg" alt="Shopping Website" loading="lazy">
+                </figure>
+                <h3 class="project-title">Shopping Website</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="https://realzeke-bank.vercel.app/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-4.png" alt="ZynPay" loading="lazy">
+                </figure>
+                <h3 class="project-title">ZynPay</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="https://realzeke-chirp.vercel.app/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-5.png" alt="Chirp" loading="lazy">
+                </figure>
+                <h3 class="project-title">Chirp</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
           </ul>
 
         </section>

@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+.classpath
+
+# Build outputs
+dist/
+build/
+out/
+*.log
+
+# Temporary files
+*.tmp
+tmp/
+temp/
+.cache/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+*.bak
+*.orig

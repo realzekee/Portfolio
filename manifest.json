@@ -1,0 +1,23 @@
+{
+  "name": "Zeke's Portfolio",
+  "short_name": "Zeke Portfolio",
+  "description": "Professional portfolio showcasing web development projects and skills",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e1e1f",
+  "theme_color": "#ffc107",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./assets/logos/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/images/my-avatar.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

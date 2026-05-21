@@ -1,1 +1,0 @@
-Personal portfolio website showcasing projects and skills (HTML, CSS, JavaScript).

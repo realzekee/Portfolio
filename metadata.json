@@ -1,0 +1,8 @@
+{
+  "name": "Zeke Portfolio",
+  "description": "Commercial-ready developer portfolio connected to GitHub.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

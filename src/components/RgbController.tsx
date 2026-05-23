@@ -57,20 +57,24 @@ export function RgbController() {
     return () => document.removeEventListener("set-rgb", handleSetRGB);
   }, []);
 
-  // Update localStorage and document CSS properties
+  // Update document CSS properties and conditionally save custom coordinates
   useEffect(() => {
     if (!isRainbow) {
       localStorage.setItem("rgb-r", r.toString());
       localStorage.setItem("rgb-g", g.toString());
       localStorage.setItem("rgb-b", b.toString());
     }
-    localStorage.setItem("rgb-rainbow", isRainbow.toString());
 
     // Set CSS custom variables
     const root = document.documentElement;
     root.style.setProperty("--accent-rgb", `${r}, ${g}, ${b}`);
     root.style.setProperty("--accent-color", `rgb(${r}, ${g}, ${b})`);
   }, [r, g, b, isRainbow]);
+
+  // Persists rainbow toggle setting only when changed, avoiding heavy continuous disk I/O
+  useEffect(() => {
+    localStorage.setItem("rgb-rainbow", isRainbow.toString());
+  }, [isRainbow]);
 
   // Handle rainbow animation loop
   useEffect(() => {

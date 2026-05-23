@@ -211,11 +211,10 @@ export function Projects({ repos }: ProjectsProps) {
               return (
                 <motion.div
                   key={repo.id}
-                  layout
-                  initial={{ opacity: 0, y: 25 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.3 }}
                   className="group relative flex flex-col justify-between bg-zinc-950 border border-zinc-900 rounded-2xl p-6 hover:border-cyan-500/30 transition-all duration-300 hover:bg-[#0c0c0c]"
                   style={{
                     borderColor: "rgba(var(--accent-rgb), 0.1)"

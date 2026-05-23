@@ -290,7 +290,6 @@ export function Terminal({ githubUser }: { githubUser: any }) {
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={handleKeyDown}
               className="flex-1 bg-transparent text-zinc-100 border-none outline-none focus:ring-0 font-mono text-sm"
-              autoFocus
               placeholder="type help..."
             />
             <button 

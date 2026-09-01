@@ -11,6 +11,7 @@ interface Preset {
 }
 
 const PRESETS: Preset[] = [
+  { name: "Solar Orange", r: 249, g: 115, b: 22, color: "bg-orange-500" },
   { name: "Novara Crimson", r: 239, g: 68, b: 68, color: "bg-red-500" },
   { name: "Cyber Cyan", r: 6, g: 182, b: 212, color: "bg-cyan-500" },
   { name: "Matrix Emerald", r: 34, g: 197, b: 94, color: "bg-emerald-500" },
@@ -20,18 +21,18 @@ const PRESETS: Preset[] = [
 
 export function RgbController() {
   const [isOpen, setIsOpen] = useState(false);
-  const [r, setR] = useState(6);
-  const [g, setG] = useState(182);
-  const [b, setB] = useState(212);
-  const [isRainbow, setIsRainbow] = useState(true);
+  const [r, setR] = useState(249);
+  const [g, setG] = useState(115);
+  const [b, setB] = useState(22);
+  const [isRainbow, setIsRainbow] = useState(false);
 
-  // Load initial settings (defaults to true for rainbow cycle)
+  // Load initial settings (defaults to Solar Orange, rainbow disabled)
   useEffect(() => {
     const savedRainbow = localStorage.getItem("rgb-rainbow");
-    if (savedRainbow === "false") {
-      setIsRainbow(false);
-    } else {
+    if (savedRainbow === "true") {
       setIsRainbow(true);
+    } else {
+      setIsRainbow(false);
     }
 
     const savedR = localStorage.getItem("rgb-r");

@@ -112,7 +112,7 @@ export function Projects({ repos }: ProjectsProps) {
     <section id="works" className="py-28 bg-[#050505] relative overflow-hidden border-t border-white/5">
       {/* Ambient Glow */}
       <div 
-        className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full blur-[140px] pointer-events-none opacity-15"
+        className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full blur-[140px] pointer-events-none opacity-25"
         style={{
           background: `radial-gradient(circle, rgba(var(--accent-rgb), 0.5) 0%, transparent 70%)`
         }}
@@ -122,7 +122,7 @@ export function Projects({ repos }: ProjectsProps) {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <div className="flex items-center gap-3 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">
-              <span className="text-zinc-300 font-semibold flex items-center gap-1.5">
+              <span className="text-zinc-200 font-semibold flex items-center gap-1.5 bg-orange-500/10 px-2.5 py-1 rounded-full border border-orange-500/20">
                 <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "var(--accent-color)" }} />
                 PRIMARY CRAFT // SOFTWARE DEVELOPMENT
               </span>
@@ -138,28 +138,28 @@ export function Projects({ repos }: ProjectsProps) {
             </p>
           </div>
 
-          <div className="text-xs font-mono text-zinc-400 bg-white/5 px-4 py-2 rounded-full border border-white/10 flex items-center gap-2 self-start md:self-auto">
+          <div className="text-xs font-mono text-orange-300 bg-orange-500/10 px-4 py-2 rounded-full border border-orange-500/30 flex items-center gap-2 self-start md:self-auto shadow-[0_0_15px_rgba(var(--accent-rgb),0.15)]">
             <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "var(--accent-color)" }} />
             <span>GITHUB API SYNCED LIVE</span>
           </div>
         </div>
 
         {/* Search & Filter Bar */}
-        <div className="flex flex-col md:flex-row gap-4 items-center justify-between mb-12 p-2 bg-zinc-950/60 border border-white/10 rounded-2xl backdrop-blur-xl">
+        <div className="flex flex-col md:flex-row gap-4 items-center justify-between mb-12 p-2.5 bg-zinc-950/70 border border-orange-500/20 rounded-2xl backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.6)]">
           {/* Search */}
           <div className="relative w-full md:w-80">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-orange-400/70" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Filter repositories..."
-              className="w-full bg-white/5 text-sm text-zinc-200 pl-10 pr-10 py-2.5 rounded-xl border border-transparent focus:border-white/20 focus:outline-none transition-colors font-mono"
+              className="w-full bg-white/5 text-sm text-zinc-100 pl-10 pr-10 py-2.5 rounded-xl border border-white/5 focus:border-orange-500/50 focus:outline-none transition-colors font-mono focus:ring-1 focus:ring-orange-500/40"
             />
             {searchQuery && (
               <button 
                 onClick={() => setSearchQuery("")}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -176,8 +176,8 @@ export function Projects({ repos }: ProjectsProps) {
                   onClick={() => setSelectedLanguage(lang)}
                   className={`text-[11px] font-mono uppercase tracking-wider px-3.5 py-1.5 rounded-full border transition-all duration-300 cursor-pointer ${
                     isActive 
-                      ? "bg-white text-black font-bold border-white" 
-                      : "bg-white/5 text-zinc-400 border-white/10 hover:border-white/20 hover:text-white"
+                      ? "bg-gradient-to-r from-orange-500 to-amber-500 text-black font-bold border-transparent shadow-[0_0_15px_rgba(249,115,22,0.4)]" 
+                      : "bg-white/5 text-zinc-400 border-white/10 hover:border-orange-500/30 hover:text-orange-200"
                   }`}
                 >
                   {lang}
@@ -199,29 +199,29 @@ export function Projects({ repos }: ProjectsProps) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.05 }}
-                  className="group relative flex flex-col justify-between bg-zinc-950/70 border border-white/10 rounded-2xl p-6 sm:p-7 hover:border-white/30 transition-all duration-500 hover:shadow-[0_10px_35px_rgba(0,0,0,0.8)]"
+                  className="group relative flex flex-col justify-between bg-zinc-950/70 border border-white/10 hover:border-orange-500/40 rounded-2xl p-6 sm:p-7 transition-all duration-500 hover:shadow-[0_10px_35px_rgba(249,115,22,0.15)]"
                 >
                   <div>
                     {/* Top Row: Icon & Language / Stars */}
                     <div className="flex items-start justify-between mb-5">
-                      <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-11 h-11 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center group-hover:scale-110 group-hover:border-orange-500/40 transition-transform duration-300">
                         {getProjectIcon(repo.name)}
                       </div>
 
                       <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
                         {repo.language && (
-                          <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-white/5 border border-white/10 text-zinc-300 font-medium">
+                          <span className="text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded bg-orange-500/10 border border-orange-500/20 text-orange-200 font-medium">
                             {repo.language}
                           </span>
                         )}
-                        <span className="flex items-center gap-1 text-[11px] text-zinc-400">
-                          <Star className="w-3.5 h-3.5 text-zinc-500" />
+                        <span className="flex items-center gap-1 text-[11px] text-zinc-400 group-hover:text-orange-300 transition-colors">
+                          <Star className="w-3.5 h-3.5 text-orange-400/80" />
                           {repo.stargazers_count}
                         </span>
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-display font-bold text-white mb-2.5 group-hover:text-white transition-colors">
+                    <h3 className="text-xl font-display font-bold text-white mb-2.5 group-hover:text-orange-200 transition-colors">
                       {repo.name}
                     </h3>
 
@@ -231,12 +231,12 @@ export function Projects({ repos }: ProjectsProps) {
                   </div>
 
                   {/* Bottom Action Row */}
-                  <div className="pt-5 border-t border-white/5 flex items-center justify-between gap-3 mt-auto">
+                  <div className="pt-5 border-t border-white/5 group-hover:border-orange-500/20 flex items-center justify-between gap-3 mt-auto transition-colors">
                     <a
                       href={repo.html_url}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-zinc-400 hover:text-white transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-zinc-400 hover:text-orange-300 transition-colors"
                     >
                       <Github className="w-3.5 h-3.5" />
                       <span>Source Code</span>
@@ -247,7 +247,7 @@ export function Projects({ repos }: ProjectsProps) {
                         href={demoLink}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-black font-semibold bg-white hover:bg-zinc-200 px-3.5 py-1.5 rounded-full transition-all active:scale-95 shadow-md"
+                        className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-black font-semibold bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 px-3.5 py-1.5 rounded-full transition-all active:scale-95 shadow-[0_0_15px_rgba(249,115,22,0.3)] hover:shadow-[0_0_20px_rgba(249,115,22,0.5)]"
                       >
                         <span>Live Demo</span>
                         <ArrowUpRight className="w-3 h-3" />
@@ -257,7 +257,7 @@ export function Projects({ repos }: ProjectsProps) {
                         href={repo.html_url}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-mono uppercase tracking-wider text-zinc-500 hover:text-zinc-300 transition-colors"
+                        className="inline-flex items-center gap-1 text-xs font-mono uppercase tracking-wider text-zinc-500 hover:text-orange-300 transition-colors"
                       >
                         <span>Inspect Repo ↗</span>
                       </a>

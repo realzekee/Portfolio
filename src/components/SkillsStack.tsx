@@ -41,9 +41,9 @@ export function SkillsStack() {
     <section id="capabilities" className="py-28 bg-[#050505] relative overflow-hidden border-t border-white/5">
       {/* Background ambient glow */}
       <div 
-        className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full blur-[140px] pointer-events-none opacity-15"
+        className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full blur-[140px] pointer-events-none opacity-25"
         style={{
-          background: `radial-gradient(circle, rgba(var(--accent-rgb), 0.4) 0%, transparent 70%)`
+          background: `radial-gradient(circle, rgba(var(--accent-rgb), 0.45) 0%, transparent 70%)`
         }}
       />
 
@@ -51,7 +51,7 @@ export function SkillsStack() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <div className="flex items-center gap-3 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">
-              <span className="text-zinc-300 font-semibold flex items-center gap-1.5">
+              <span className="text-zinc-200 font-semibold flex items-center gap-1.5 bg-orange-500/10 px-2.5 py-1 rounded-full border border-orange-500/20">
                 <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "var(--accent-color)" }} />
                 TECHNICAL MATRIX
               </span>
@@ -67,8 +67,8 @@ export function SkillsStack() {
             </p>
           </div>
 
-          <div className="text-xs font-mono text-zinc-400 bg-white/5 px-4 py-2 rounded-full border border-white/10 flex items-center gap-2 self-start md:self-auto">
-            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "var(--accent-color)" }} />
+          <div className="text-xs font-mono text-orange-300 bg-orange-500/10 px-4 py-2 rounded-full border border-orange-500/30 flex items-center gap-2 self-start md:self-auto shadow-[0_0_15px_rgba(var(--accent-rgb),0.15)]">
+            <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "var(--accent-color)" }} />
             <span>FULL-STACK ENGINEERING STACK</span>
           </div>
         </div>
@@ -83,19 +83,19 @@ export function SkillsStack() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group bg-zinc-950/70 border border-white/10 rounded-2xl p-7 sm:p-8 hover:border-white/25 transition-all duration-500 hover:shadow-[0_10px_35px_rgba(0,0,0,0.8)] flex flex-col justify-between scroll-mt-24"
+              className="group bg-zinc-950/70 border border-white/10 hover:border-orange-500/40 rounded-2xl p-7 sm:p-8 transition-all duration-500 hover:shadow-[0_10px_35px_rgba(249,115,22,0.15)] flex flex-col justify-between scroll-mt-24"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/25 flex items-center justify-center group-hover:scale-110 group-hover:border-orange-500/50 transition-transform duration-300">
                     {item.icon}
                   </div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 px-2.5 py-1 rounded bg-white/5 border border-white/10">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-orange-300 px-2.5 py-1 rounded bg-orange-500/10 border border-orange-500/25">
                     {item.badge}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-display font-bold text-white mb-2 group-hover:text-white transition-colors">
+                <h3 className="text-xl font-display font-bold text-white mb-2 group-hover:text-orange-200 transition-colors">
                   {item.title}
                 </h3>
 
@@ -104,11 +104,11 @@ export function SkillsStack() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-2 pt-6 border-t border-white/5">
+              <div className="flex flex-wrap gap-2 pt-6 border-t border-white/5 group-hover:border-orange-500/20 transition-colors">
                 {item.skills.map((skill, sIdx) => (
                   <span
                     key={sIdx}
-                    className="text-[11px] font-mono text-zinc-300 px-3 py-1 bg-white/5 border border-white/10 rounded-lg hover:border-white/25 transition-colors"
+                    className="text-[11px] font-mono text-zinc-300 px-3 py-1 bg-white/5 border border-white/10 rounded-lg hover:border-orange-500/35 hover:text-orange-200 hover:bg-orange-500/10 transition-colors"
                   >
                     {skill}
                   </span>

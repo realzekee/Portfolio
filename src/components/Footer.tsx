@@ -29,7 +29,7 @@ export function Footer() {
             href="https://github.com/realzekee"
             target="_blank"
             rel="noreferrer"
-            className="text-zinc-400 hover:text-white transition-colors flex items-center gap-1.5 uppercase tracking-wider text-[11px]"
+            className="text-zinc-400 hover:text-orange-300 transition-colors flex items-center gap-1.5 uppercase tracking-wider text-[11px]"
           >
             <Github className="w-3.5 h-3.5" />
             <span>GitHub</span>
@@ -39,7 +39,7 @@ export function Footer() {
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1 text-zinc-400 hover:text-white transition-colors uppercase tracking-wider text-[11px] cursor-pointer"
+            className="flex items-center gap-1 text-zinc-400 hover:text-orange-300 transition-colors uppercase tracking-wider text-[11px] cursor-pointer"
           >
             <span>Back to Top</span>
             <ArrowUp className="w-3 h-3" />

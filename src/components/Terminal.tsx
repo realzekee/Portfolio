@@ -63,7 +63,7 @@ export function Terminal({ githubUser }: { githubUser: any }) {
             { text: "  works      Show active software repositories and live demos.", type: "info" },
             { text: "  repos      Query repository list from GitHub API.", type: "info" },
             { text: "  color      Calibrate ambient lighting coordinates.", type: "info" },
-            { text: "             Syntax: color [red | cyan | lime | violet | amber | rainbow]", type: "info" },
+            { text: "             Syntax: color [orange | red | cyan | lime | violet | amber | rainbow]", type: "info" },
             { text: "  whoami     Show user session telemetry.", type: "info" },
             { text: "  socials    List communications and transmission links.", type: "info" },
             { text: "  clear      Flush terminal display buffer.", type: "info" }
@@ -117,11 +117,12 @@ export function Terminal({ githubUser }: { githubUser: any }) {
             const targetColor = args[0].toLowerCase();
             let eventDetail: any = null;
 
-            if (targetColor === "red" || targetColor === "crimson" || targetColor === "novara") eventDetail = { r: 239, g: 68, b: 68 };
+            if (targetColor === "orange" || targetColor === "solar") eventDetail = { r: 249, g: 115, b: 22 };
+            else if (targetColor === "red" || targetColor === "crimson" || targetColor === "novara") eventDetail = { r: 239, g: 68, b: 68 };
             else if (targetColor === "cyan" || targetColor === "blue") eventDetail = { r: 6, g: 182, b: 212 };
             else if (targetColor === "lime" || targetColor === "green" || targetColor === "emerald") eventDetail = { r: 34, g: 197, b: 94 };
             else if (targetColor === "violet" || targetColor === "purple" || targetColor === "sunset") eventDetail = { r: 168, g: 85, b: 247 };
-            else if (targetColor === "amber" || targetColor === "orange" || targetColor === "gold") eventDetail = { r: 245, g: 158, b: 11 };
+            else if (targetColor === "amber" || targetColor === "gold") eventDetail = { r: 245, g: 158, b: 11 };
             else if (targetColor === "rainbow" || targetColor === "cycle") eventDetail = { isRainbow: true };
 
             if (eventDetail) {
@@ -134,7 +135,7 @@ export function Terminal({ githubUser }: { githubUser: any }) {
             } else {
               outputLines = [
                 { text: `Unknown color parameter: '${targetColor}'.`, type: "error" },
-                { text: "Supported options: red, cyan, lime, violet, amber, rainbow", type: "info" }
+                { text: "Supported options: orange, red, cyan, lime, violet, amber, rainbow", type: "info" }
               ];
             }
           }
@@ -199,9 +200,9 @@ export function Terminal({ githubUser }: { githubUser: any }) {
       {/* Background radial glow */}
       <div 
         style={{
-          background: `radial-gradient(circle, rgba(var(--accent-rgb), 0.08) 0%, transparent 70%)`
+          background: `radial-gradient(circle, rgba(var(--accent-rgb), 0.2) 0%, transparent 70%)`
         }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[140px] pointer-events-none opacity-20" 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] rounded-full blur-[140px] pointer-events-none opacity-35" 
       />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10 w-full">
@@ -209,7 +210,7 @@ export function Terminal({ githubUser }: { githubUser: any }) {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <div className="flex items-center gap-3 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">
-              <span className="text-zinc-300 font-semibold flex items-center gap-1.5">
+              <span className="text-zinc-200 font-semibold flex items-center gap-1.5 bg-orange-500/10 px-2.5 py-1 rounded-full border border-orange-500/20">
                 <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "var(--accent-color)" }} />
                 ZEKE-OS KERNEL SHELL
               </span>
@@ -218,12 +219,12 @@ export function Terminal({ githubUser }: { githubUser: any }) {
             </div>
             
             <h2 className="text-3xl md:text-4xl font-display font-extrabold tracking-tight text-white uppercase flex items-center gap-3">
-              <TerminalIcon className="w-7 h-7" />
+              <TerminalIcon className="w-7 h-7 text-orange-400" />
               Developer Shell.
             </h2>
           </div>
 
-          <div className="hidden sm:flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full border border-white/10 text-[10px] font-mono text-zinc-400">
+          <div className="hidden sm:flex items-center gap-2 bg-orange-500/10 px-3.5 py-1.5 rounded-full border border-orange-500/25 text-[10px] font-mono text-orange-300">
             <span>Arrow keys for history • type 'help'</span>
           </div>
         </div>
@@ -231,19 +232,19 @@ export function Terminal({ githubUser }: { githubUser: any }) {
         {/* Terminal Window Container */}
         <div 
           onClick={focusInput}
-          className="w-full bg-zinc-950/80 backdrop-blur-xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)] rounded-2xl overflow-hidden cursor-text flex flex-col font-mono text-sm leading-relaxed"
+          className="w-full bg-zinc-950/85 backdrop-blur-xl border border-white/10 hover:border-orange-500/40 shadow-[0_20px_50px_rgba(0,0,0,0.9)] hover:shadow-[0_10px_40px_rgba(249,115,22,0.15)] rounded-2xl overflow-hidden cursor-text flex flex-col font-mono text-sm leading-relaxed transition-all duration-500"
           style={{
             minHeight: "380px",
           }}
         >
-          <div className="flex items-center justify-between px-5 py-3.5 bg-zinc-900/60 border-b border-white/10">
+          <div className="flex items-center justify-between px-5 py-3.5 bg-zinc-900/70 border-b border-white/10">
             <div className="flex items-center gap-2 select-none">
-              <Circle className="w-3 h-3 text-red-500/80 fill-red-500/50" />
-              <Circle className="w-3 h-3 text-yellow-500/80 fill-yellow-500/50" />
-              <Circle className="w-3 h-3 text-green-500/80 fill-green-500/50" />
+              <Circle className="w-3 h-3 text-orange-500/90 fill-orange-500/60" />
+              <Circle className="w-3 h-3 text-amber-500/90 fill-amber-500/60" />
+              <Circle className="w-3 h-3 text-zinc-600 fill-zinc-600" />
             </div>
-            <span className="text-xs text-zinc-400 select-none flex items-center gap-2 font-mono">
-              <Shield className="w-3.5 h-3.5 text-zinc-500" /> zeke@developer-terminal:~
+            <span className="text-xs text-orange-300/80 select-none flex items-center gap-2 font-mono">
+              <Shield className="w-3.5 h-3.5 text-orange-400/80" /> zeke@developer-terminal:~
             </span>
             <div className="w-12" />
           </div>
@@ -263,7 +264,7 @@ export function Terminal({ githubUser }: { githubUser: any }) {
               }
               if (line.type === "success") {
                 return (
-                  <div key={idx} className="text-emerald-400">
+                  <div key={idx} className="text-orange-300">
                     {line.text}
                   </div>
                 );
@@ -292,7 +293,7 @@ export function Terminal({ githubUser }: { githubUser: any }) {
 
           <form 
             onSubmit={handleCommandSubmit}
-            className="flex items-center gap-2.5 border-t border-white/10 px-6 py-4 bg-black/40"
+            className="flex items-center gap-2.5 border-t border-white/10 px-6 py-4 bg-black/50"
           >
             <span className="font-semibold text-xs sm:text-sm" style={{ color: "var(--accent-color)" }}>
               zeke@developer ~ %
@@ -308,7 +309,7 @@ export function Terminal({ githubUser }: { githubUser: any }) {
             />
             <button 
               type="submit" 
-              className="text-zinc-400 hover:text-white transition-colors cursor-pointer"
+              className="text-orange-400 hover:text-orange-300 transition-colors cursor-pointer"
             >
               <CornerDownLeft className="w-4 h-4" />
             </button>

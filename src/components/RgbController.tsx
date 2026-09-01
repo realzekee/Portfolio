@@ -11,11 +11,11 @@ interface Preset {
 }
 
 const PRESETS: Preset[] = [
-  { name: "Cyan Neon", r: 6, g: 182, b: 212, color: "bg-cyan-500" },
-  { name: "Matrix Lime", r: 34, g: 197, b: 94, color: "bg-emerald-500" },
-  { name: "Cyber Sunset", r: 236, g: 72, b: 153, color: "bg-pink-500" },
-  { name: "Chili Red", r: 239, g: 68, b: 68, color: "bg-red-500" },
-  { name: "Gamer Amber", r: 245, g: 158, b: 11, color: "bg-amber-500" },
+  { name: "Novara Crimson", r: 239, g: 68, b: 68, color: "bg-red-500" },
+  { name: "Cyber Cyan", r: 6, g: 182, b: 212, color: "bg-cyan-500" },
+  { name: "Matrix Emerald", r: 34, g: 197, b: 94, color: "bg-emerald-500" },
+  { name: "Sunset Violet", r: 168, g: 85, b: 247, color: "bg-purple-500" },
+  { name: "Editorial Amber", r: 245, g: 158, b: 11, color: "bg-amber-500" },
 ];
 
 export function RgbController() {
@@ -23,19 +23,24 @@ export function RgbController() {
   const [r, setR] = useState(6);
   const [g, setG] = useState(182);
   const [b, setB] = useState(212);
-  const [isRainbow, setIsRainbow] = useState(false);
+  const [isRainbow, setIsRainbow] = useState(true);
 
-  // Load initial settings
+  // Load initial settings (defaults to true for rainbow cycle)
   useEffect(() => {
+    const savedRainbow = localStorage.getItem("rgb-rainbow");
+    if (savedRainbow === "false") {
+      setIsRainbow(false);
+    } else {
+      setIsRainbow(true);
+    }
+
     const savedR = localStorage.getItem("rgb-r");
     const savedG = localStorage.getItem("rgb-g");
     const savedB = localStorage.getItem("rgb-b");
-    const savedRainbow = localStorage.getItem("rgb-rainbow");
 
     if (savedR !== null) setR(Number(savedR));
     if (savedG !== null) setG(Number(savedG));
     if (savedB !== null) setB(Number(savedB));
-    if (savedRainbow === "true") setIsRainbow(true);
   }, []);
 
   // Listen for set-rgb CustomEvent to allow external system adjustments (e.g. from the Terminal)
@@ -174,7 +179,6 @@ export function RgbController() {
             transition={{ type: "spring", damping: 25, stiffness: 350 }}
             className="fixed bottom-24 right-6 z-50 w-[calc(100vw-32px)] sm:w-[360px] bg-zinc-950/95 backdrop-blur-xl border border-zinc-900 rounded-2xl p-6 flex flex-col shadow-2xl shadow-cyan-500/5 overflow-hidden"
           >
-            {/* Header */}
             <div className="flex items-center justify-between pb-4 border-b border-zinc-900 mb-5">
               <div className="flex items-center gap-2">
                 <Zap className="w-4 h-4 text-zinc-100" style={{ color: `rgb(${r}, ${g}, ${b})` }} />

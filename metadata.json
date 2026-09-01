@@ -1,7 +1,8 @@
 {
   "name": "Zeke Portfolio",
-  "description": "Commercial-ready developer portfolio connected to GitHub.",
+  "description": "Portfolio of Zeke, a full-stack software engineer specializing in modern TypeScript, React applications, performant web tools, and reactive systems.",
   "requestFramePermissions": [],
   "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
   ]
 }

@@ -1,41 +1,86 @@
+import { useState } from "react";
 import { motion } from "motion/react";
-import { Mail, Github } from "lucide-react";
+import { Mail, Github, Copy, Check, ArrowUpRight, Sparkles, Send } from "lucide-react";
 
 export function Contact() {
+  const [copied, setCopied] = useState(false);
+  const email = "realzekee@gmail.com";
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
-      
-      <div className="max-w-3xl mx-auto px-6 text-center">
+    <section id="contact" className="py-32 bg-[#050505] relative overflow-hidden border-t border-white/5">
+      {/* Dynamic ambient backlight */}
+      <div 
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full blur-[160px] pointer-events-none opacity-20"
+        style={{
+          background: `radial-gradient(circle, rgba(var(--accent-rgb), 0.5) 0%, transparent 70%)`
+        }}
+      />
+
+      <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="flex flex-col items-center"
         >
-          <div className="text-cyan-400 font-mono text-sm mb-4">What's Next?</div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h2>
-          <p className="text-zinc-400 text-lg mb-10 max-w-xl mx-auto">
-            I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+          {/* Tag */}
+          <div className="flex items-center gap-3 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-6">
+            <span className="text-zinc-300 font-semibold flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "var(--accent-color)" }} />
+              TRANSMISSION & INQUIRIES
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-black text-white tracking-tight uppercase max-w-3xl leading-[1.05] mb-6">
+            Let's Build Something <span className="italic font-serif font-light text-zinc-400">Exceptional.</span>
+          </h2>
+
+          <p className="text-zinc-400 text-sm sm:text-base md:text-lg max-w-xl mx-auto font-sans leading-relaxed mb-10">
+            Available for high-impact software engineering roles, bespoke frontend architectures, full-stack web applications, and technical collaborations.
           </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md">
+            {/* Direct Email Action */}
             <a 
-              href="mailto:realzekee@gmail.com"
-              className="flex items-center gap-2 bg-white text-zinc-900 px-8 py-4 rounded-full font-semibold hover:bg-zinc-200 transition-all active:scale-95 w-full sm:w-auto justify-center"
+              href={`mailto:${email}`}
+              className="flex items-center justify-center gap-2.5 bg-white text-black px-8 py-4 rounded-full font-mono text-xs uppercase tracking-wider font-bold hover:bg-zinc-200 transition-all active:scale-95 w-full sm:w-auto shadow-xl"
             >
-              <Mail className="w-5 h-5" />
-              Say Hello
+              <Mail className="w-4 h-4" />
+              <span>Send Message</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
-            <a 
-              href="https://github.com/realzekee"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-full font-semibold border border-zinc-800 hover:bg-zinc-800 transition-all active:scale-95 w-full sm:w-auto justify-center"
+
+            {/* Quick Copy Action */}
+            <button 
+              onClick={handleCopyEmail}
+              className="flex items-center justify-center gap-2.5 bg-white/5 text-zinc-300 hover:text-white px-7 py-4 rounded-full font-mono text-xs uppercase tracking-wider border border-white/10 hover:border-white/30 transition-all active:scale-95 w-full sm:w-auto cursor-pointer"
             >
-              <Github className="w-5 h-5" />
-              GitHub
-            </a>
+              {copied ? (
+                <>
+                  <Check className="w-4 h-4 text-emerald-400" />
+                  <span className="text-emerald-400">Copied to clipboard</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-4 h-4 text-zinc-400" />
+                  <span>Copy Direct Email</span>
+                </>
+              )}
+            </button>
+          </div>
+
+          {/* Direct Address Badge */}
+          <div className="mt-8 text-xs font-mono text-zinc-400 bg-white/5 border border-white/10 px-4 py-2 rounded-full flex items-center gap-2">
+            <span className="text-zinc-400">DIRECT //</span>
+            <span className="text-white font-medium select-all">{email}</span>
           </div>
         </motion.div>
       </div>

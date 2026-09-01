@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
+import { Projects } from "./components/Projects";
 import { SkillsStack } from "./components/SkillsStack";
 import { Terminal } from "./components/Terminal";
-import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { RgbController } from "./components/RgbController";
@@ -31,8 +31,7 @@ export default function App() {
           setRepos(reposData);
         } else {
           console.error("Failed to fetch Github data", profileRes.status, reposRes.status);
-          // Fallback basic data if API limit hit
-          setProfile({ name: "Zeke", bio: "Software Developer" });
+          setProfile({ name: "Zeke", bio: "Full-Stack Software Engineer" });
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -46,20 +45,24 @@ export default function App() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a]">
-        <div className="w-8 h-8 border-4 border-zinc-800 border-t-cyan-500 rounded-full animate-spin" />
+      <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white font-mono gap-4">
+        <div className="w-8 h-8 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+        <span className="text-xs uppercase tracking-widest text-zinc-500">INITIALIZING DEVELOPER WORKSPACE...</span>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-zinc-50 font-sans selection:bg-cyan-500/30 selection:text-white">
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-white/20 selection:text-white relative">
       <Navbar />
       <main>
         <Hero githubUser={profile} />
+        {/* Coding & Repositories as Primary Showcase */}
+        <Projects repos={repos} />
+        {/* Technical Capabilities & Software Disciplines */}
         <SkillsStack />
         <Terminal githubUser={profile} />
-        {repos.length > 0 && <Projects repos={repos} />}
+        {/* Direct Contact & Inquiries */}
         <Contact />
       </main>
       <Footer />

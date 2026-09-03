@@ -53,14 +53,14 @@ export function SkillsStack() {
             <div className="flex items-center gap-3 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">
               <span className="text-zinc-200 font-semibold flex items-center gap-1.5 bg-orange-500/10 px-2.5 py-1 rounded-full border border-orange-500/20">
                 <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "var(--accent-color)" }} />
-                TECHNICAL MATRIX
+                SKILLS & TECH STACK
               </span>
               <span>•</span>
-              <span className="text-zinc-400">DISCIPLINES & PROFICIENCY</span>
+              <span className="text-zinc-400">TOOLS & FRAMEWORKS</span>
             </div>
             
             <h2 className="text-4xl md:text-5xl font-display font-extrabold tracking-tight text-white uppercase">
-              Technical Arsenal.
+              Skills & Technologies.
             </h2>
             <p className="text-zinc-400 mt-3 max-w-xl text-sm md:text-base font-sans">
               Comprehensive expertise across full-stack web engineering, reactive client architectures, scalable backend services, and modern cloud deployment.

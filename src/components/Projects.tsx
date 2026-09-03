@@ -124,10 +124,10 @@ export function Projects({ repos }: ProjectsProps) {
             <div className="flex items-center gap-3 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">
               <span className="text-zinc-200 font-semibold flex items-center gap-1.5 bg-orange-500/10 px-2.5 py-1 rounded-full border border-orange-500/20">
                 <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "var(--accent-color)" }} />
-                PRIMARY CRAFT // SOFTWARE DEVELOPMENT
+                PROJECTS // PORTFOLIO
               </span>
               <span>•</span>
-              <span className="text-zinc-400">ENGINEERED ARTIFACTS</span>
+              <span className="text-zinc-400">APPLICATIONS & REPOSITORIES</span>
             </div>
             
             <h2 className="text-4xl md:text-5xl font-display font-extrabold tracking-tight text-white uppercase">
@@ -140,7 +140,7 @@ export function Projects({ repos }: ProjectsProps) {
 
           <div className="text-xs font-mono text-orange-300 bg-orange-500/10 px-4 py-2 rounded-full border border-orange-500/30 flex items-center gap-2 self-start md:self-auto shadow-[0_0_15px_rgba(var(--accent-rgb),0.15)]">
             <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "var(--accent-color)" }} />
-            <span>GITHUB API SYNCED LIVE</span>
+            <span>Synced with GitHub</span>
           </div>
         </div>
 

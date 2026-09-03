@@ -80,7 +80,7 @@ export function Navbar() {
             <nav className="flex flex-col gap-3 text-xs font-mono tracking-wider uppercase text-zinc-300">
               <a onClick={() => setMobileMenuOpen(false)} href="#about" className="py-2 hover:text-orange-400 transition-colors">Index</a>
               <a onClick={() => setMobileMenuOpen(false)} href="#works" className="py-2 hover:text-orange-400 transition-colors">Code & Projects</a>
-              <a onClick={() => setMobileMenuOpen(false)} href="#capabilities" className="py-2 hover:text-orange-400 transition-colors">Technical Arsenal</a>
+              <a onClick={() => setMobileMenuOpen(false)} href="#capabilities" className="py-2 hover:text-orange-400 transition-colors">Skills & Tech Stack</a>
               <a onClick={() => setMobileMenuOpen(false)} href="#contact" className="py-2 hover:text-orange-400 transition-colors">Contact</a>
             </nav>
 

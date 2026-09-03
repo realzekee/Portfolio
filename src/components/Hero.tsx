@@ -51,11 +51,11 @@ export function Hero({ githubUser }: HeroProps) {
       <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505] pointer-events-none" />
 
       {/* Top Telemetry Header */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full flex items-center justify-between text-[11px] font-mono text-zinc-500 uppercase tracking-widest pt-2">
+      <div className="relative z-10 max-w-7xl mx-auto w-full flex items-center justify-between gap-2 text-[9px] min-[390px]:text-[10px] sm:text-[11px] font-mono text-zinc-500 uppercase tracking-wider sm:tracking-widest pt-2">
         <div className="flex items-center gap-3">
-          <span className="text-zinc-200 font-semibold flex items-center gap-1.5 bg-orange-500/10 px-2.5 py-1 rounded-full border border-orange-500/20">
+          <span className="text-zinc-200 font-semibold flex items-center gap-1.5 bg-orange-500/10 px-2 sm:px-2.5 py-1 rounded-full border border-orange-500/20 whitespace-nowrap">
             <span className="w-1.5 h-1.5 rounded-full animate-ping" style={{ backgroundColor: "var(--accent-color)" }} />
-            SOFTWARE ENGINEERING // DEV
+            <span>SOFTWARE ENGINEER<span className="hidden min-[440px]:inline"> // DEV</span></span>
           </span>
           <span className="hidden sm:inline text-zinc-700">|</span>
           <span className="hidden sm:inline text-zinc-400">FULL-STACK & REACTIVE WEB ARCHITECTURES</span>
@@ -63,9 +63,9 @@ export function Hero({ githubUser }: HeroProps) {
 
         <div className="flex items-center gap-4">
           <span className="hidden md:inline text-zinc-400">BASED IN MODERN WEB PLATFORMS</span>
-          <span className="text-zinc-200 font-semibold px-2.5 py-1 rounded-full border border-orange-500/30 bg-orange-500/10 flex items-center gap-1.5 shadow-[0_0_12px_rgba(var(--accent-rgb),0.2)]">
+          <span className="text-zinc-200 font-semibold px-2 sm:px-2.5 py-1 rounded-full border border-orange-500/30 bg-orange-500/10 flex items-center gap-1.5 shadow-[0_0_12px_rgba(var(--accent-rgb),0.2)] whitespace-nowrap">
             <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "var(--accent-color)" }} />
-            AVAILABLE FOR HIRE
+            <span>AVAILABLE<span className="hidden min-[380px]:inline"> FOR HIRE</span></span>
           </span>
         </div>
       </div>
@@ -118,7 +118,7 @@ export function Hero({ githubUser }: HeroProps) {
           <a
             href="#skills-frontend"
             className="group text-orange-200 font-bold flex items-center gap-1.5 bg-orange-500/15 hover:bg-orange-500/25 px-3.5 py-1.5 rounded-full border border-orange-500/35 hover:border-orange-500/60 transition-all cursor-pointer active:scale-95 shadow-[0_0_15px_rgba(var(--accent-rgb),0.15)]"
-            title="Jump to Frontend Engineering in Arsenal"
+            title="Jump to Frontend Engineering in Skills"
           >
             <Layout className="w-3.5 h-3.5 transition-transform group-hover:scale-110" style={{ color: "var(--accent-color)" }} />
             <span>FRONTEND ENGINEERING</span>
@@ -127,7 +127,7 @@ export function Hero({ githubUser }: HeroProps) {
           <a
             href="#skills-backend"
             className="group text-zinc-300 hover:text-orange-200 font-medium flex items-center gap-1.5 bg-white/5 hover:bg-orange-500/15 px-3 py-1.5 rounded-full border border-white/10 hover:border-orange-500/35 transition-all cursor-pointer active:scale-95"
-            title="Jump to Backend & Runtime APIs in Arsenal"
+            title="Jump to Backend & Runtime APIs in Skills"
           >
             <Server className="w-3.5 h-3.5 text-zinc-400 group-hover:text-orange-400 transition-colors" />
             <span>BACKEND & APIS</span>
@@ -136,7 +136,7 @@ export function Hero({ githubUser }: HeroProps) {
           <a
             href="#skills-logic"
             className="group text-zinc-300 hover:text-orange-200 font-medium flex items-center gap-1.5 bg-white/5 hover:bg-orange-500/15 px-3 py-1.5 rounded-full border border-white/10 hover:border-orange-500/35 transition-all cursor-pointer active:scale-95"
-            title="Jump to Application & Product Logic in Arsenal"
+            title="Jump to Application & Product Logic in Skills"
           >
             <Cpu className="w-3.5 h-3.5 text-zinc-400 group-hover:text-orange-400 transition-colors" />
             <span>APPLICATION LOGIC</span>
@@ -145,7 +145,7 @@ export function Hero({ githubUser }: HeroProps) {
           <a
             href="#skills-devops"
             className="group text-zinc-400 hover:text-orange-200 font-medium flex items-center gap-1.5 bg-white/5 hover:bg-orange-500/15 px-3 py-1.5 rounded-full border border-white/10 hover:border-orange-500/35 transition-all cursor-pointer active:scale-95"
-            title="Jump to DevOps, Cloud & Tooling in Arsenal"
+            title="Jump to DevOps, Cloud & Tooling in Skills"
           >
             <Cloud className="w-3.5 h-3.5 text-zinc-400 group-hover:text-orange-400 transition-colors" />
             <span>DEVOPS & CLOUD</span>
